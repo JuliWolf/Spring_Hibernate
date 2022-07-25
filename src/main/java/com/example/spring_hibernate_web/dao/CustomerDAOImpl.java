@@ -20,8 +20,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 
   @Override
   public List<Customer> getCustomers() {
-    // create a query
-    TypedQuery<Customer> query = entityManager.createQuery("from Customer", Customer.class);
+    // create a query ... sort by lst name
+    TypedQuery<Customer> query = entityManager
+        .createQuery("from Customer order by lastName", Customer.class);
 
     // execute query and get result list
     // return the results
