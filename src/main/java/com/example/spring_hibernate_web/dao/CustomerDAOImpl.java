@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -33,5 +32,10 @@ public class CustomerDAOImpl implements CustomerDAO {
   public void saveCustomer(Customer customer) {
     // save the customer
     entityManager.persist(customer);
+  }
+
+  @Override
+  public Customer getCustomer(int id) {
+    return entityManager.find(Customer.class, id);
   }
 }
