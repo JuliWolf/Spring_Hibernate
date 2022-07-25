@@ -19,7 +19,6 @@ public class CustomerDAOImpl implements CustomerDAO {
   private EntityManager entityManager;
 
   @Override
-  @Transactional
   public List<Customer> getCustomers() {
     // create a query
     TypedQuery<Customer> query = entityManager.createQuery("from Customer", Customer.class);
