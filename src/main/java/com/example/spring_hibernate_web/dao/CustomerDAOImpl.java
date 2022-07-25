@@ -27,4 +27,10 @@ public class CustomerDAOImpl implements CustomerDAO {
     // return the results
     return query.getResultList();
   }
+
+  @Override
+  public void saveCustomer(Customer customer) {
+    // save the customer
+    entityManager.persist(customer);
+  }
 }
