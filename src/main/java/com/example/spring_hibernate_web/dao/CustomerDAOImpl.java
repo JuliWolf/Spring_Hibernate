@@ -31,7 +31,7 @@ public class CustomerDAOImpl implements CustomerDAO {
   @Override
   public void saveCustomer(Customer customer) {
     // save the customer
-    entityManager.persist(customer);
+    entityManager.merge(customer);
   }
 
   @Override

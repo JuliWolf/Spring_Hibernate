@@ -21,6 +21,9 @@
     <h3>Save Customer</h3>
 
     <form th:action="saveCustomer" th:object="${customer}" method="post">
+<!--      need to associate this data with customer id-->
+      <input type="hidden" th:field="*{id}" id="blogId">
+
       <table>
         <tbody>
           <tr>
