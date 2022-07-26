@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -37,5 +38,16 @@ public class CustomerDAOImpl implements CustomerDAO {
   @Override
   public Customer getCustomer(int id) {
     return entityManager.find(Customer.class, id);
+  }
+
+  @Override
+  public void deleteCustomer(int id) {
+    // create query
+    Query query = entityManager
+        .createQuery("delete from Customer where id=:customerId");
+
+    query.setParameter("customerId", id);
+
+    query.executeUpdate();
   }
 }
