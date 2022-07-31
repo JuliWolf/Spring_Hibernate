@@ -15,7 +15,7 @@
     <div class="container">
       <div class="content">
 
-<!--        put new button-->
+<!--    put new button-->
         <input
           type="button"
           value="Add Customer"
@@ -23,7 +23,7 @@
           onclick="window.location.href='showFormForAdd'; return false;"
         >
 
-<!--            add our html table here -->
+<!--    add our html table here -->
         <table>
           <thead>
             <tr>
@@ -34,7 +34,7 @@
             </tr>
           </thead>
 
-          <!--                loop over and print our customers-->
+<!--      loop over and print our customers-->
           <tr th:each="customer: ${customers}">
             <th th:text="${customer.firstName}" />
             <th th:text="${customer.lastName}" />

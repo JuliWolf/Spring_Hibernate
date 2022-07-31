@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.PersistenceContext;
-
 @SpringBootApplication
 @EntityScan("com.example.spring_hibernate_web.entity")
 @EnableTransactionManagement
